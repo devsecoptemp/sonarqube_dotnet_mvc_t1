@@ -41,5 +41,5 @@ jobs:
           vs-version: '[15,16.4,16.5)
 
       - name: Build
-        msbuild sonarqube_dotnet_mvc_t1.sln 
+        msbuild /p:OutpuPath=.\bin sonarqube_dotnet_mvc_t1.sln
       
