@@ -27,6 +27,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
+      - name: Restore NuGet Packages build
+        uses: nuget restore *.sln        
+        
       - name: msbuild
-        run: msbuild -t:restore /p:OutpuPath=.\bin sonarqube_dotnet_mvc_t1.sln
+        #-t:restore for NuGet
+        #run: msbuild -t:restore /p:OutpuPath=.\bin sonarqube_dotnet_mvc_t1.sln
+        run: msbuild /p:OutpuPath=.\bin sonarqube_dotnet_mvc_t1.sln
       
