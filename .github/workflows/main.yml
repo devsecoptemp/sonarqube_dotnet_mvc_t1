@@ -25,10 +25,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
+        
+      - name: Setup Nuget
+        uses: NuGet/setup-nuget@v1.0.2
       - name: Restore NuGet Packages build
-        uses: nuget restore *.sln        
+        run: nuget restore sonarqube_dotnet_mvc_t1.sln        
         
       - name: msbuild
         #-t:restore for NuGet
