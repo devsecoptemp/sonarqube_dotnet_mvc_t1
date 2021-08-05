@@ -67,7 +67,7 @@ jobs:
         run: | 
           msbuild /p:OutpuPath=.\bin sonarqube_dotnet_mvc_t1.sln
 
-analyze:
+  analyze:
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
